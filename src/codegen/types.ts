@@ -85,6 +85,9 @@ export function codegenArrayOrTupleType(item: string, length?: number) {
   if (length !== undefined && length < 6) {
     return `[${Array(length).fill(item).join(', ')}]`
   } else {
+    if (item.includes('|')) {
+      item = `(${item})`
+    }
     return `${item}[]`
   }
 }

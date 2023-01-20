@@ -80,10 +80,8 @@ function codegenArrayOrTupleType(item, length) {
         return `[${Array(length).fill(item).join(', ')}]`;
     }
     else {
-        console.log(item);
         if (item.includes('|')) {
             item = `(${item})`;
-            console.log("bruh");
         }
         return `${item}[]`;
     }
